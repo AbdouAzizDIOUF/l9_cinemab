@@ -1,5 +1,6 @@
 package org.sid.cinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,7 +27,9 @@ public class Film implements Serializable {
     private double duree;
     private String photo;
     @OneToMany(mappedBy = "film")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // ne sera pas pris en compte lors de l'appel de la methode
     private Collection<Projection> projections;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // ne sera pas pris en compte lors de l'appel de la methode
     private Categorie categorie;
 }

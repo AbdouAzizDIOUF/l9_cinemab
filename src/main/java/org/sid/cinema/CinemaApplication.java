@@ -9,8 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CinemaApplication implements CommandLineRunner {
 
-    @Autowired
-    private ICinemaInitService iCinemaInitService;
+    private final ICinemaInitService iCinemaInitService;
+
+    public CinemaApplication(ICinemaInitService iCinemaInitService) {
+        this.iCinemaInitService = iCinemaInitService;
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(CinemaApplication.class, args);
     }
@@ -18,7 +22,7 @@ public class CinemaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        iCinemaInitService.initVilles();
+        /*iCinemaInitService.initVilles();
         iCinemaInitService.initCinemas();
         iCinemaInitService.initSalles();
         iCinemaInitService.initPlaces();
@@ -26,6 +30,6 @@ public class CinemaApplication implements CommandLineRunner {
         iCinemaInitService.initCategories();
         iCinemaInitService.initFilms();
         iCinemaInitService.initProjections();
-        iCinemaInitService.initTickets();
+        iCinemaInitService.initTickets();*/
     }
 }
