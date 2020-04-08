@@ -1,5 +1,6 @@
 package org.sid.cinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ public class Ticket implements Serializable {
     private Long id;
     private double prix;
     private String nomClient;
-    @Column(unique = true, nullable = true)
+    @Column(unique = false, nullable = true)
     private Integer codePayement;
     private boolean reservee;
     @ManyToOne

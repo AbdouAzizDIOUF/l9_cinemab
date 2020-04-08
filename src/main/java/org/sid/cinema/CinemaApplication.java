@@ -22,7 +22,7 @@ public class CinemaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-   /*     iCinemaInitService.initVilles();
+  /*      iCinemaInitService.initVilles();
         iCinemaInitService.initCinemas();
         iCinemaInitService.initSalles();
         iCinemaInitService.initPlaces();
